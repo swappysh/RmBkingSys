@@ -4,13 +4,13 @@
 </head>
 
 <body>
-	<p href = "#">Home</p>
-	<p href = "loginform.php">Login / My Account</p>
-	<p href = "reservation_form1.php">Reservation</p>
-	<p href = "">Room Availability</p>
-	<p href = "">Upcoming Events</p>
-	<p href = "">Contact</p>
-	<p href = "">FAQ</p>
-	<p href = "">About Us</p>
+	<a href = "#">Home</a>
+	<a href = "loginform.php">Login / My Account</a>
+	<a href = "reservation_form1.php">Reservation</a>
+	<a href = "">Room Availability</a>
+	<a href = "">Upcoming Events</a>
+	<a href = "">Contact</a>
+	<a href = "">FAQ</a>
+	<a href = "">About Us</a>
 </body>
 </html>
