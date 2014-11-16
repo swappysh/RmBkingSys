@@ -5,7 +5,12 @@
 
 <body>
 	<a href = "#">Home</a>
-	<a href = "loginform.php">Login / My Account</a>
+	<?php
+	if (!isset( $_COOKIE['user'] )) {
+		echo "<a href = \"loginform.php\">Login / My Account</a>";
+	}
+	else echo "Hey ".$_COOKIE['user']."!";
+	?>
 	<a href = "reservation_form1.php">Reservation</a>
 	<a href = "">Room Availability</a>
 	<a href = "">Upcoming Events</a>
