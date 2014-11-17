@@ -1,3 +1,9 @@
+<?php
+require_once 'cnntdb.php';
+
+connect();
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,23 +16,43 @@ and open the template in the editor.
         <title>Reservation Form</title>
     </head>
     <body>
-        <form name = "Form1"  onsubmit="return validateForm()" method = "post"  action = '' >
+        <form name = "Form1"  onsubmit="return validateForm()" method = "post"  action = 'reservation_form2.php' >
             <label>Room Type:
                 <select name="room_type">
-                    <option>option 1</option>
+                	<?php
+                	   $sql = "SELECT DISTINCT Rtype FROM Room";
+                       $result = $conn->query($sql);
+
+                       while ( $row = $result->fetch_assoc() ) {
+                           echo "<option>".$row["Rtype"]."</option>";
+                       }
+                	?>
                 </select>
-            </label>
+            </label><br>
             <label>Room Capacity:
                 <select name="room_capacity">
-                    <option>option 1</option>
+                    <?php
+                       $sql = "SELECT DISTINCT Rcapacity FROM Room";
+                       $result = $conn->query($sql);
+
+                       while ( $row = $result->fetch_assoc() ) {
+                           echo "<option>".$row["Rcapacity"]."</option>";
+                       }
+                    ?>
                 </select>
-            </label>
-            <label>From Date:<input type ="date" name = "f_date" value="yyyy-mm-dd"/></label>
-            <label>To Date:<input type ="date" name = "t_date" value="yyyy-mm-dd"/></label>
-            <label>From Time:<input type ="time" name = "f_time" value="hh"/></label>
-            <label>To Time:<input type ="time" name = "t_time" value="hh"/></label>
-            <input type="button" name="proceed" value="Proceed"/>
-            <input type="button" name="cancel" value="Cancel"/>
+            </label><br>
+            <label>From Date:<input type ="date" name = "f_date" value="yyyy-mm-dd"/></label><br>
+            <label>To Date:<input type ="date" name = "t_date" value="yyyy-mm-dd"/></label><br>
+            <label>From Time:<input type ="time" name = "f_time" value="hh"/></label><br>
+            <label>To Time:<input type ="time" name = "t_time" value="hh"/></label><br>
+            <input type="submit" name="proceed" value="Proceed"/>
         </form>
+
+        <a href="index.php" >
+            <div class = "button">
+                <button name="cancel" value="cancel">Cancel</button>
+            </div>
+        </a>
+
     </body>
 </html>
