@@ -11,10 +11,15 @@ and open the template in the editor.
     </head>
     <body>
         <form name = "Forgot Form"  onsubmit="return validateForm()" method = "post"  action = '' >
-            <label>eMail ID:<input type = "email" name = "email" /></label>
-            <label>Mobile Number:<input type="text" name="mob_num" /></label>
+            <label>eMail ID:<input type = "email" name = "email" /></label><br>
+            <label>Mobile Number:<input type="text" name="mob_num" /></label><br>
             <input type="button" name="sumbit" value="Submit"/>
-            <input type="button" name="cancel" value="Cancel"/>
         </form>
+
+        <a href="index.php" >
+        	<div class = "button">
+        		<button name="cancel" value="cancel">Cancel</button>
+        	</div>
+        </a>
     </body>
 </html>
