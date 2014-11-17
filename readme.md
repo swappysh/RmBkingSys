@@ -83,7 +83,6 @@ RmBkingSys is used for booking rooms for different kinds of events. It has been 
 - Time
 - Price Range
 
-
 ##Main Column:
 - Search Results(Tables)
 - Details of Room (link)
