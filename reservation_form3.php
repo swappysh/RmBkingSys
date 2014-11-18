@@ -1,3 +1,17 @@
+<?php
+    require_once 'cnntdb.php';
+
+    connect();
+
+    $sql = "SELECT Rdetails FROM Room WHERE Rname = '".$_GET['Rname']."'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo $row['Rdetails'];
+        }
+    }
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,9 +24,19 @@ and open the template in the editor.
         <title>Review Form</title>
     </head>
     <body>
-        Print in Human Readable Form
         <input type="button" name="proceed" value="Proceed"/>
-            <input type="button" name="back" value="Back"/>
-            <input type="button" name="cancel" value="Cancel"/>
+
+        <a href="reservation_form1.php" >
+            <div class = "button">
+                <button name="back" value="back">Back</button>
+            </div>
+        </a>
+
+        <a href="index.php" >
+            <div class = "button">
+                <button name="cancel" value="cancel">Cancel</button>
+            </div>
+        </a>
+
     </body>
 </html>

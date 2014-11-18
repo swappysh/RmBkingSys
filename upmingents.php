@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href = "Calendar/style.css">
 </head>
 
 <body>
@@ -17,10 +18,10 @@
             </div>
             <div>
                 <ul class = "nav navbar-nav">
-                    <li class = "active"><a href = "#">Home</a></li>
+                    <li><a href = "index.php">Home</a></li>
                     <li><a href = "reservation_form1.php">Reservation</a></li>
                     <li><a href = "brwsrm.php">Room Availability</a></li>
-                    <li><a href = "upmingents.php">Upcoming Events</a></li>
+                    <li class = "active"><a href = "#">Upcoming Events</a></li>
                     <li><a href = "">Contact</a></li>
                     <li><a href = "">FAQ</a></li>
                     <li><a href = "">About Us</a></li>
@@ -46,7 +47,13 @@
     </nav>
 
     <!--Page Content-->
-
+    <div class = "cal">
+			<?php
+				include('Calendar/starTutorial.php');
+				$cal1 = new Calendar();
+				echo $cal1->show();
+			?>
+	</div>
 	
 	<script src="dist/js/jquery.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>

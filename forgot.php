@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Forgot User Name or Password</title>
-    </head>
+<head>
+  <title>Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+
     <body>
         <form name = "Forgot Form"  onsubmit="return validateForm()" method = "post"  action = '' >
             <label>eMail ID:<input type = "email" name = "email" /></label><br>

@@ -5,54 +5,112 @@ connect();
 ?>
 
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Reservation Form</title>
-    </head>
-    <body>
-        <form name = "Form1"  onsubmit="return validateForm()" method = "post"  action = 'reservation_form2.php' >
-            <label>Room Type:
-                <select name="room_type">
-                	<?php
-                	   $sql = "SELECT DISTINCT Rtype FROM Room";
-                       $result = $conn->query($sql);
+<head>
+  <title>Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
 
-                       while ( $row = $result->fetch_assoc() ) {
-                           echo "<option>".$row["Rtype"]."</option>";
-                       }
-                	?>
-                </select>
-            </label><br>
-            <label>Room Capacity:
-                <select name="room_capacity">
+<body>
+
+    <!--Navigation Bar-->
+    <nav class = "navbar navbar-default">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+                <a class = "navbar-brand" href="index.php">RmBkingSys</a>
+            </div>
+            <div>
+                <ul class = "nav navbar-nav">
+                    <li><a href = "index.php">Home</a></li>
+                    <li class = "active"><a href = "#">Reservation</a></li>
+                    <li><a href = "brwsrm.php">Room Availability</a></li>
+                    <li><a href = "upmingents.php">Upcoming Events</a></li>
+                    <li><a href = "">Contact</a></li>
+                    <li><a href = "">FAQ</a></li>
+                    <li><a href = "">About Us</a></li>
+                </ul>
+                <ul class = "nav navbar-nav navbar-right">
                     <?php
-                       $sql = "SELECT DISTINCT Rcapacity FROM Room";
-                       $result = $conn->query($sql);
+                        if (!isset( $_COOKIE['user'] )) {
+                            echo "<li>"
+                                ."<a href = \"loginform.php\">Login</a></li>";
+                        }
+                        else echo "<li class=\"dropdown\">"
+                                    ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
+                                    ."<ul class=\"dropdown-menu\">"
+                                            ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
+                                            ."<li><a href=\"#\">Edit</a></li>"
+                                            ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
+                                        ."</ul>"
+                                    ."</li>";
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                       while ( $row = $result->fetch_assoc() ) {
-                           echo "<option>".$row["Rcapacity"]."</option>";
-                       }
+    <!--Page Content-->
+
+        <!--div class = "container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#</td>
+                </tr>
+            </tbody>
+        </table>
+    </div-->
+
+    <div class = "container">
+        <form role = "form" name = "Form1"  onsubmit="return validateForm()" method = "post"  action = 'reservation_form2.php' >
+            <div class = "form-group">
+                <label>Room Type:</label>
+                <select name="room_type" class = "form-control">
+                    <?php
+                        $sql = "SELECT DISTINCT Rtype FROM Room";
+                        $result = $conn->query($sql);
+
+                        while ( $row = $result->fetch_assoc() ) {
+                            echo "<option>".$row["Rtype"]."</option>";
+                        }
                     ?>
                 </select>
-            </label><br>
-            <label>From Date:<input type ="date" name = "f_date" value="yyyy-mm-dd"/></label><br>
-            <label>To Date:<input type ="date" name = "t_date" value="yyyy-mm-dd"/></label><br>
-            <label>From Time:<input type ="time" name = "f_time" value="hh"/></label><br>
-            <label>To Time:<input type ="time" name = "t_time" value="hh"/></label><br>
-            <input type="submit" name="proceed" value="Proceed"/>
-        </form>
-
-        <a href="index.php" >
-            <div class = "button">
-                <button name="cancel" value="cancel">Cancel</button>
             </div>
-        </a>
+            <div class = "form-group">
+                <label>Room Capacity:</label>
+                <select name="room_capacity" class = "form-control">
+                    <?php
+                        $sql = "SELECT DISTINCT Rcapacity FROM Room";
+                        $result = $conn->query($sql);
 
-    </body>
+                        while ( $row = $result->fetch_assoc() ) {
+                            echo "<option>".$row["Rcapacity"]."</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label>From Date:</label>
+                <input type ="date" name = "f_date" value="yyyy-mm-dd" class = "form-control"/>
+            </div>
+            <div class = "form-group">
+                <label>To Date:</label>
+                <input type ="date" name = "t_date" value="yyyy-mm-dd" class = "form-control"/>
+            </div>
+            <input type="submit" name="proceed" class = "btn btn-default" value="Proceed"/>
+            <a href="index.php" class = "btn btn-default" >Cancel</a>
+        </form>
+    </div>
+    
+    <!--JavaScript Files-->
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+</body>
 </html>
