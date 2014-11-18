@@ -66,7 +66,12 @@
 </div>
 
     <div class = "container">
-        <a href = "reservation_form4.php" class = "btn btn-default">Proceed</a>
+        <form role = "form" method = "post" action = "reservation_form4.php">
+            <a href = "reservation_form4.php" class = "btn btn-default">Proceed</a>
+            <input type="hidden" name = "fdate" value = "<?php echo $_GET['fdate']; ?>"/>
+            <input type="hidden" name = "tdate" value = "<?php echo $_GET['tdate']; ?>"/>
+            <input type="hidden" name = "Rname" value = "<?php echo $_GET['Rname']; ?>"/>
+        </form>
 
         <a href="reservation_form1.php" class = "btn btn-default">Back</a>
 

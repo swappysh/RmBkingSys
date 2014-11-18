@@ -5,6 +5,20 @@
     if (!isset($_COOKIE['user'])) {
         header("Location: $rootURL/loginform.php");
     }
+
+    if (isset($_POST['pay'])) {
+        require_once 'cnntdb.php';
+
+        connect();
+
+        $Uname = $_COOKIE['user'];
+        $fdate = $_POST['fdate'];
+        $tdate = $_POST['tdate'];
+        $Rname = $_POST['Rname'];
+
+        $sql = "INSERT INTO BkingDetail VALUES ('$Uname' ,'$fdate' ,'active' ,'$tdate' ,'$Rname')";
+        $result = $conn->query($sql);
+    }
 ?>
 
 <!DOCTYPE html>

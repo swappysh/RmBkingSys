@@ -98,11 +98,11 @@ connect();
             </div>
             <div class = "form-group">
                 <label>From Date:</label>
-                <input type ="date" name = "f_date" value="yyyy-mm-dd" class = "form-control"/>
+                <input type ="date" name = "f_date" placeholder="yyyy-mm-dd" class = "form-control" required/>
             </div>
             <div class = "form-group">
                 <label>To Date:</label>
-                <input type ="date" name = "t_date" value="yyyy-mm-dd" class = "form-control"/>
+                <input type ="date" name = "t_date" placeholder="yyyy-mm-dd" class = "form-control" required/>
             </div>
             <input type="submit" name="proceed" class = "btn btn-default" value="Proceed"/>
             <a href="index.php" class = "btn btn-default" >Cancel</a>
