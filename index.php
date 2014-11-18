@@ -71,6 +71,7 @@
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
                                             ."<li><a href=\"My_Account/edit.php\">Edit</a></li>"
+                                            ."<li><a href=\"My_Account/bkinghtry.php\">Booking History</a></li>"
                                             ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
