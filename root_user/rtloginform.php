@@ -44,14 +44,16 @@ if (isset($_POST['login'])) {
                     <?php
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li class = \"active\">"
-                                ."<a href = \"loginform.php\">Admin Login</a></li>";
+                                ."<a href = \"rtloginform.php\">Admin Login</a></li>";
                         }
                         else echo "<li class=\"dropdown\">"
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
-                                            ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
-                                            ."<li><a href=\"#\">Edit</a></li>"
-                                            ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
+                                            ."<li><a href=\"root_user/adrm.php\">Add Room</a></li>"
+                                            ."<li><a href=\"#\">Delete Room</a></li>"
+                                            ."<li><a href=\"#\">Cancel Reservation</a></li>"
+                                            ."<li><a href = \"#\">Remove User</a></li>"
+                                            ."<li><a href=\"root_user/rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
                     ?>

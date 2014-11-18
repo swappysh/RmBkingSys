@@ -54,14 +54,14 @@
                         <?php
                             if (!isset( $_COOKIE['user'] )) {
                                 echo "<li>"
-                                    ."<a href = \"#\">Login</a></li>";
+                                    ."<a href = \"loginform.php\">Login</a></li>";
                             }
                             else echo "<li class=\"dropdown\">"
                                         ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
-                                            ."<ul class=\"dropdown-menu\">"
-                                                ."<li><a href=\"#\">Show Profile</a></li>"
+                                        ."<ul class=\"dropdown-menu\">"
+                                                ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
                                                 ."<li><a href=\"#\">Edit</a></li>"
-                                                ."<li><a href=\"#\">Log Out</a></li>"
+                                                ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
                                             ."</ul>"
                                         ."</li>";
                         ?>
