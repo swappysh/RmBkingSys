@@ -16,8 +16,17 @@
         $tdate = $_POST['tdate'];
         $Rname = $_POST['Rname'];
 
-        $sql = "INSERT INTO BkingDetail VALUES ('$Uname' ,'$fdate' ,'active' ,'$tdate' ,'$Rname')";
+        if (!$conn) {
+			die("<div class=\"alert alert-danger\" role=\"alert\">Connection failed: ".mysqli_connect_error()."</div>");
+		}
+
+        $sql = "INSERT INTO BkingDetail VALUES ('$Uname' ,'$Rname' ,'active' ,'$fdate' ,'$tdate')";
         $result = $conn->query($sql);
+
+        if($result){
+     		header("Location: $rootURL/loginform.php");
+     	}
+     	else echo "'$Uname'".$conn->error;
     }
 ?>
 
@@ -81,6 +90,9 @@
                 	</select>
                 </div>
                 <input type="submit" name="pay" value="Pay" class = "btn btn-default"/>
+            	<input type="hidden" name = "fdate" value = "<?php echo $_POST['fdate']; ?>"/>
+            	<input type="hidden" name = "tdate" value = "<?php echo $_POST['tdate']; ?>"/>
+            	<input type="hidden" name = "Rname" value = "<?php echo $_POST['Rname']; ?>"/>
             </form>
         </div>
 

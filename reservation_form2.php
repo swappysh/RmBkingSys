@@ -29,6 +29,7 @@ if ($result->num_rows > 0 ){
 
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
