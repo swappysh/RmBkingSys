@@ -7,14 +7,17 @@
     }
 
     if (isset($_POST['pay'])) {
+
+    	session_start();
+
         require_once 'cnntdb.php';
 
         connect();
 
         $Uname = $_COOKIE['user'];
-        $fdate = $_POST['fdate'];
-        $tdate = $_POST['tdate'];
-        $Rname = $_POST['Rname'];
+        $fdate = $_SESSION['f_date'];
+        $tdate = $_SESSION['t_date'];
+        $Rname = $_SESSION['Rname'];
 
         if (!$conn) {
 			die("<div class=\"alert alert-danger\" role=\"alert\">Connection failed: ".mysqli_connect_error()."</div>");
@@ -107,9 +110,6 @@
                 	</select>
                 </div>
                 <input type="submit" name="pay" value="Pay" class = "btn btn-default"/>
-            	<input type="hidden" name = "fdate" value = "<?php echo $_POST['fdate']; ?>"/>
-            	<input type="hidden" name = "tdate" value = "<?php echo $_POST['tdate']; ?>"/>
-            	<input type="hidden" name = "Rname" value = "<?php echo $_POST['Rname']; ?>"/>
             </form>
         </div>
 

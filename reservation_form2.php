@@ -135,7 +135,7 @@ $result = $conn->query($sql);
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr class = \"clickableRow\" data-url = \"reservation_form3.php?Rname=".$row['Rname']."&fdate=".$f_date."&tdate=".$t_date."\" ><td>".$row['Rname']."</td>"
+                        echo "<tr class = \"clickableRow\" data-url = \"reservation_form3.php?Rname=".$row['Rname']."\" ><td>".$row['Rname']."</td>"
                             ."<td>".$row['Rtype']."</td>"
                             ."<td>".$row['Rcapacity']."</td>"
                             ."<td>".$row['Rprice']."</td></tr>";
