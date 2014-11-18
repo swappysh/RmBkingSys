@@ -3,8 +3,11 @@
 
 	connect();
 
-	$sql = "SELECT * FROM Room";
+	$sql = "SELECT Room.Rname, Rtype, Rcapacity, Rdetails, Rprice, fdate, tdate FROM Room, BkingDetail WHERE Room.Rname = BkingDetail.Rname;";
 	$result = $conn->query($sql);
+
+	$sql = "SELECT * FROM Room WHERE Rname NOT IN (SELECT Room.Rname FROM Room, BkingDetail WHERE Room.Rname = BkingDetail.Rname)";
+	$result1 = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +82,8 @@
                         <th>Room Capacity</th>
                         <th>Room Details</th>
                         <th>Room Price</th>
+                        <th>Booked from Date</th>
+                        <th>Booked to Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,7 +96,21 @@
                                     ."<td>".$row['Rtype']."</td>"
                                     ."<td>".$row['Rcapacity']."</td>"
                                     ."<td>".$row['Rdetails']."</td>"
-                                    ."<td>".$row['Rprice']."</td></tr>";
+                                    ."<td>".$row['Rprice']."</td>"
+                                    ."<td>".$row['fdate']."</td>"
+                                    ."<td>".$row['tdate']."</td></tr>";
+                            }
+                        }
+                        if ($result1->num_rows > 0) {
+                            while ($row = $result1->fetch_assoc()) {
+                                echo "<tr>"
+                                    ."<td>".$row['Rname']."</td>"
+                                    ."<td>".$row['Rtype']."</td>"
+                                    ."<td>".$row['Rcapacity']."</td>"
+                                    ."<td>".$row['Rdetails']."</td>"
+                                    ."<td>".$row['Rprice']."</td>"
+                                    ."<td>---</td>"
+                                    ."<td>---</td></tr>";
                             }
                         }
                     ?>
