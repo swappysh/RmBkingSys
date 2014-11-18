@@ -1,8 +1,13 @@
 <?php
 
+session_start();
+
 require_once 'cnntdb.php';
 
 connect();
+
+$_SESSION['f_date'] = $_POST['f_date'];
+$_SESSION['t_date'] = $_POST['t_date'];
 
 $f_date = $_POST['f_date'];
 $t_date = $_POST['t_date'];
