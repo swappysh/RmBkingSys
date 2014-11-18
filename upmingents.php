@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/css/bootstrap.min.css">
   <link rel="stylesheet" href = "Calendar/style.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/RmBkingSys.css">
+  <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -64,12 +66,20 @@
     </nav>
 
     <!--Page Content-->
-    <div class = "cal">
+    <div class = "container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Upcoming Events</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class = "cal">
 			<?php
 				include('Calendar/starTutorial.php');
 				$cal1 = new Calendar();
 				echo $cal1->show();
 			?>
+        </div>
 	</div>
 	
 	<script src="dist/js/jquery.min.js"></script>
