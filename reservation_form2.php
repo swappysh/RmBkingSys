@@ -27,7 +27,6 @@ if ($result->num_rows > 0 ){
     $sql .= ")";
 }
 
-//echo $sql;
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -79,10 +78,7 @@ $result = $conn->query($sql);
 
     <!--Page Content-->
 
-        <!--Added Jquery script for clickable rows>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
-
-    <div class = "container">
+    <!--div class = "container">
         <form name = "Form2"  onsubmit="return validateForm()" method = "post"  action = '' >
             <div class = "form-group">
                 <label>Sort By:</label>
@@ -100,7 +96,7 @@ $result = $conn->query($sql);
         <br><a href="reservation_form1.php" class = "btn btn-default" >Back</a>
 
         <a href="index.php" class = "btn btn-default">Cancel</a>
-    </div>
+    </div-->
         
     <div class = "container">
         <table class="table table-hover">
