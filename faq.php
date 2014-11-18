@@ -1,22 +1,3 @@
-<?php
-
-	session_start();
-
-	$_SESSION['Rname'] = $_GET['Rname'];
-
-    if ( !isset($_SESSION['f_date']) ) {
-        require_once 'url.php';
-        header("Location: $rootURL/index.php");
-    }
-
-    require_once 'cnntdb.php';
-
-    connect();
-
-    $sql = "SELECT Rdetails FROM Room WHERE Rname = '".$_GET['Rname']."'";
-    $result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +18,11 @@
             <div>
                 <ul class = "nav navbar-nav">
                     <li><a href = "index.php">Home</a></li>
-                    <li class = "active"><a href = "#">Reservation</a></li>
+                    <li><a href = "reservation_form1.php">Reservation</a></li>
                     <li><a href = "brwsrm.php">Room Availability</a></li>
                     <li><a href = "upmingents.php">Upcoming Events</a></li>
                     <li><a href = "contact.php">Contact</a></li>
-                    <li><a href = "faq.php">FAQ</a></li>
+                    <li class = "active"><a href = "#">FAQ</a></li>
                     <li><a href = "about.php">About Us</a></li>
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
@@ -82,27 +63,53 @@
     </nav>
 
     <!--Page Content-->
-
-    <div class = "container">
-    <?php   
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<h1>Room Details</h1><p>".$row['Rdetails']."</p>";
-        }
-    }?>
-</div>
-
-    <div class = "container">
-        <a href = "reservation_form4.php" class = "btn btn-default">Proceed</a>
-
-        <a href="dstryssn.php" id = "back" class = "btn btn-default">Back</a>
-
-        <a href="index.php" class = "btn btn-default">Cancel</a>
+    <div class="container-fluid">
+        <h2>FAQ'S:</h2>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How can I cancel the Booking?</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">Sorry! Still even I don't know that!!!</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">How can I see my Booking History?</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">Sorry! Still even I don't know that!!!</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">How to book a room?</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">Click on the 'Reservation' tab and follow the instructions in that page and proceed to book a room.</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">How can I edit my User details?</a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">First Login to your account. Then Click on 'My Account' tab in the top-right corner and select 'Edit' in the drop down menu.</div>
+                </div>
+            </div>
+        </div> 
     </div>
-    
-    <!--JavaScript Files-->
-    <script src="dist/js/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-
-    </body>
+	
+	<script src="dist/js/jquery.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+</body>
 </html>
