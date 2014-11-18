@@ -1,14 +1,22 @@
 <?php
 
     require_once 'url.php';
-    
+
+    session_start();
+        
+    #To check whether user is logined or not
     if (!isset($_COOKIE['user'])) {
         header("Location: $rootURL/loginform.php");
     }
 
-    if (isset($_POST['pay'])) {
+    #To check whether the session is working or not
+    if ( !isset($_SESSION['f_date']) ) {
+        require_once 'url.php';
+        header("Location: $rootURL/index.php");
+    }
 
-    	session_start();
+    #To act upon when form is clicked
+    if (isset($_POST['pay'])) {
 
         require_once 'cnntdb.php';
 
@@ -27,7 +35,7 @@
         $result = $conn->query($sql);
 
         if($result){
-     		header("Location: $rootURL/loginform.php");
+     		header("Location: $rootURL/dstryssn.php");
      	}
      	else echo "'$Uname'".$conn->error;
     }

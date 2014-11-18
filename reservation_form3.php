@@ -4,6 +4,11 @@
 
 	$_SESSION['Rname'] = $_GET['Rname'];
 
+    if ( !isset($_SESSION['f_date']) ) {
+        require_once 'url.php';
+        header("Location: $rootURL/index.php");
+    }
+
     require_once 'cnntdb.php';
 
     connect();
@@ -90,7 +95,7 @@
     <div class = "container">
         <a href = "reservation_form4.php" class = "btn btn-default">Proceed</a>
 
-        <a href="reservation_form1.php" class = "btn btn-default">Back</a>
+        <a href="dstryssn.php" id = "back" class = "btn btn-default">Back</a>
 
         <a href="index.php" class = "btn btn-default">Cancel</a>
     </div>
@@ -98,5 +103,6 @@
     <!--JavaScript Files-->
     <script src="dist/js/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+
     </body>
 </html>
