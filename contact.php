@@ -1,22 +1,3 @@
-<?php
-
-	session_start();
-
-	$_SESSION['Rname'] = $_GET['Rname'];
-
-    if ( !isset($_SESSION['f_date']) ) {
-        require_once 'url.php';
-        header("Location: $rootURL/index.php");
-    }
-
-    require_once 'cnntdb.php';
-
-    connect();
-
-    $sql = "SELECT Rdetails FROM Room WHERE Rname = '".$_GET['Rname']."'";
-    $result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +18,10 @@
             <div>
                 <ul class = "nav navbar-nav">
                     <li><a href = "index.php">Home</a></li>
-                    <li class = "active"><a href = "#">Reservation</a></li>
+                    <li><a href = "reservation_form1.php">Reservation</a></li>
                     <li><a href = "brwsrm.php">Room Availability</a></li>
                     <li><a href = "upmingents.php">Upcoming Events</a></li>
-                    <li><a href = "contact.php">Contact</a></li>
+                    <li class = "active"><a href = "#">Contact</a></li>
                     <li><a href = "faq.php">FAQ</a></li>
                     <li><a href = "about.php">About Us</a></li>
                 </ul>
@@ -82,27 +63,59 @@
     </nav>
 
     <!--Page Content-->
-
-    <div class = "container">
-    <?php   
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<h1>Room Details</h1><p>".$row['Rdetails']."</p>";
-        }
-    }?>
-</div>
-
-    <div class = "container">
-        <a href = "reservation_form4.php" class = "btn btn-default">Proceed</a>
-
-        <a href="dstryssn.php" id = "back" class = "btn btn-default">Back</a>
-
-        <a href="index.php" class = "btn btn-default">Cancel</a>
+    <div class = "container-fluid">
+        <h2>Contact Us:</h2>
+        <div class="row">
+        <div class="col-sm-4">
+        <div class="jumbotron">
+        <h3>The Registrar</h3>
+        <h4>
+        Registrar's Office<br>
+        Indian Institute of Technology Mandi<br>
+        Kamand Campus, VPO Kamand,<br>
+        Distt. Mandi - 175005 Himachal Pradesh<br>
+        India<br>
+        Tel: +91 1905-300015<br>
+        Fax: +91 01905-300009<br>
+        Email: registrar[at]iitmandi.ac.in<br>
+        </h4>
+        </div>
+        </div>
+            
+        <div class="col-sm-4">
+        <div class="jumbotron">
+        <h3>The Director</h3>
+        <h4>
+        Director's office Indian Institute of Technology Mandi<br>
+        Kamand Campus, VPO Kamand,<br>
+        Distt. Mandi - 175005 Himachal Pradesh<br>
+        India<br>
+        Tel: +91 1905-300001<br>
+        Fax: +91 01905-300009<br>
+        Email: diroffice[at]iitmandi.ac.in<br>
+        </h4>
+        </div>
+        </div>
+            
+        <div class="col-sm-4">
+        <div class="jumbotron">
+        <h3>Swapnil Sharma</h3>
+        <h4>
+        Room No: 203<br>
+        Suvalsar Hostel, IIT Mandi<br>
+        Distt. Mandi - 175005 Himachal Pradesh<br>
+        India<br>
+        Tel: +91 9816936034<br>
+        Fax: +91 9816936034<br>
+        Email: b13234[at]students.iitmandi.ac.in<br>
+        </h4>
+        </div>
+        </div>
+            
+        </div>
+        
     </div>
-    
-    <!--JavaScript Files-->
-    <script src="dist/js/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-
-    </body>
+	<script src="dist/js/jquery.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+</body>
 </html>

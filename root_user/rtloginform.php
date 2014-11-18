@@ -36,9 +36,9 @@ if (isset($_POST['login'])) {
                         <li><a href = "../reservation_form1.php">Reservation</a></li>
                         <li><a href = "../brwsrm.php">Room Availability</a></li>
                         <li><a href = "../upmingents.php">Upcoming Events</a></li>
-                        <li><a href = "">Contact</a></li>
-                        <li><a href = "">FAQ</a></li>
-                        <li><a href = "">About Us</a></li>
+                        <li><a href = "../contact.php">Contact</a></li>
+                        <li><a href = "../faq.php">FAQ</a></li>
+                        <li><a href = "../about.php">About Us</a></li>
                     </ul>
                     <ul class = "nav navbar-nav navbar-right">
                     <?php
@@ -66,9 +66,9 @@ if (isset($_POST['login'])) {
                             else echo "<li class=\"dropdown\">"
                                         ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
                                             ."<ul class=\"dropdown-menu\">"
-                                                ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
+                                                ."<li><a href=\"../My_Account/shwple.php\">Show Profile</a></li>"
                                                 ."<li><a href=\"#\">Edit</a></li>"
-                                                ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
+                                                ."<li><a href=\"../My_Account/logout.php\">Log Out</a></li>"
                                             ."</ul>"
                                         ."</li>";
                         ?>

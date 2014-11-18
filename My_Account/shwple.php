@@ -30,9 +30,9 @@
                     <li><a href = "../reservation_form1.php">Reservation</a></li>
                     <li><a href = "../brwsrm.php">Room Availability</a></li>
                     <li><a href = "../upmingents.php">Upcoming Events</a></li>
-                    <li><a href = "">Contact</a></li>
-                    <li><a href = "">FAQ</a></li>
-                    <li><a href = "">About Us</a></li>
+                    <li><a href = "../contact.php">Contact</a></li>
+                    <li><a href = "../faq.php">FAQ</a></li>
+                    <li><a href = "../about.php">About Us</a></li>
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <?php
