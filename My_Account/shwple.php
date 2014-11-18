@@ -3,7 +3,7 @@
 
 	connect();
 
-	$sql = "SELECT * FROM User";
+	$sql = "SELECT * FROM User WHERE Uname = '".$_COOKIE['user']."'";
 	$result = $conn->query($sql);
 ?>
 

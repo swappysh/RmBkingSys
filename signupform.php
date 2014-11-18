@@ -83,13 +83,13 @@ if ( isset($_POST['submit']) ) {
         <div class = "container">
             <form role = "form" name = "Sign Up Form"  onsubmit="return validateForm()" method = "post"  action = 'signupform.php' >
                 <div class = "form-group">
-                    <input type = "text" name = "user_name" class = "form-control" placeholder = "User Name" maxlength = 50 />
+                    <input type = "text" name = "user_name" class = "form-control" placeholder = "User Name" maxlength = 50 required/>
                 </div>
                 <div class = "form-group">
-                    <input type="password" name="password" class = "form-control" placeholder = "Password" />
+                    <input type="password" name="password" class = "form-control" placeholder = "Password" required/>
                 </div>
                 <div class = "form-group">
-                    <input type="password" name="confirm_password" class = "form-control" placeholder = "Confirm Password" />
+                    <input type="password" name="confirm_password" class = "form-control" placeholder = "Confirm Password" required/>
                 </div>
                 <div class = "form-group row">
                     <div class = "col-sm-6">
@@ -103,13 +103,13 @@ if ( isset($_POST['submit']) ) {
                     <input type = "text" name = "org" class = "form-control" placeholder = "Organization" maxlength = 100 />
                 </div>
                 <div class = "form-group">
-                    <input type = "email" name = "email" class = "form-control" placeholder = "Email" />
+                    <input type = "email" name = "email" class = "form-control" placeholder = "Email" required/>
                 </div>
                 <div class = "form-group">
-                    <input type = "email" name = "confirm_email" class = "form-control" placeholder = "Confirm Email"/>
+                    <input type = "email" name = "confirm_email" class = "form-control" placeholder = "Confirm Email" required/>
                 </div>
                 <div class = "form-group">
-                    <input type="text" name="mob_num" class = "form-control" placeholder = "Mobile Number"/>
+                    <input type="text" name="mob_num" class = "form-control" placeholder = "Mobile Number" required/>
                 </div>
                 <div>
                     <input type="submit" class = "btn btn-default" name="submit" value="Submit"/>
