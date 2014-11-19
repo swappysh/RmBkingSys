@@ -30,9 +30,9 @@ connect();
                     <li class = "active"><a href = "#">Reservation</a></li>
                     <li><a href = "brwsrm.php">Room Availability</a></li>
                     <li><a href = "upmingents.php">Upcoming Events</a></li>
-                    <li><a href = "contact.php">Contact</a></li>
-                    <li><a href = "faq.php">FAQ</a></li>
-                    <li><a href = "about.php">About Us</a></li>
+                    <li><a href = "index.php#cntctus">Contact</a></li>
+                    <li><a href = "index.php#faq">FAQ</a></li>
+                    <li><a href = "index.php#about">About Us</a></li>
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <?php
@@ -44,9 +44,9 @@ connect();
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"root_user/adrm.php\">Add Room</a></li>"
-                                            ."<li><a href=\"#\">Delete Room</a></li>"
-                                            ."<li><a href=\"#\">Cancel Reservation</a></li>"
-                                            ."<li><a href = \"#\">Remove User</a></li>"
+                                            ."<li><a href=\"root_user/delrm.php\">Delete Room</a></li>"
+                                            ."<li><a href=\"root_user/rmresvion.php\">Cancel Reservation</a></li>"
+                                            ."<li><a href = \"root_user/rmuser.php\">Remove User</a></li>"
                                             ."<li><a href=\"root_user/rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
@@ -61,7 +61,8 @@ connect();
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
-                                            ."<li><a href=\"#\">Edit</a></li>"
+                                            ."<li><a href=\"My_Account/edit.php\">Edit</a></li>"
+                                            ."<li><a href=\"My_Account/bkinghtry.php\">Booking History</a></li>"
                                             ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";

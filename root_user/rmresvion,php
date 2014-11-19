@@ -28,28 +28,28 @@ $result = $conn->query($sql);
             </div>
             <div>
                 <ul class = "nav navbar-nav">
-                    <li><a href = "index.php">Home</a></li>
+                    <li><a href = "../index.php">Home</a></li>
                     <li class = "active"><a href = "#">Reservation</a></li>
-                    <li><a href = "brwsrm.php">Room Availability</a></li>
-                    <li><a href = "upmingents.php">Upcoming Events</a></li>
-                    <li><a href = "contact.php">Contact</a></li>
-                    <li><a href = "faq.php">FAQ</a></li>
-                    <li><a href = "about.php">About Us</a></li>
+                    <li><a href = "../brwsrm.php">Room Availability</a></li>
+                    <li><a href = "../upmingents.php">Upcoming Events</a></li>
+                    <li><a href = "../index.php#cntctus">Contact</a></li>
+                    <li><a href = "../index.php#faq">FAQ</a></li>
+                    <li><a href = "../index.php#about">About Us</a></li>
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <?php
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li>"
-                                ."<a href = \"root_user/rtloginform.php\">Admin Login</a></li>";
+                                ."<a href = \"rtloginform.php\">Admin Login</a></li>";
                         }
                         else echo "<li class=\"dropdown\">"
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
-                                            ."<li><a href=\"root_user/adrm.php\">Add Room</a></li>"
-                                            ."<li><a href=\"#\">Delete Room</a></li>"
-                                            ."<li><a href=\"#\">Cancel Reservation</a></li>"
-                                            ."<li><a href = \"#\">Remove User</a></li>"
-                                            ."<li><a href=\"root_user/rtlogout.php\">Log Out</a></li>"
+                                            ."<li><a href=\"adrm.php\">Add Room</a></li>"
+                                            ."<li><a href=\"delrm.php\">Delete Room</a></li>"
+                                            ."<li><a href=\"rmresvion.php\">Cancel Reservation</a></li>"
+                                            ."<li><a href = \"rmuser.php\">Remove User</a></li>"
+                                            ."<li><a href=\"rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
                     ?>
@@ -57,14 +57,15 @@ $result = $conn->query($sql);
                     <?php
                         if (!isset( $_COOKIE['user'] )) {
                             echo "<li>"
-                                ."<a href = \"loginform.php\">Login</a></li>";
+                                ."<a href = \"../loginform.php\">Login</a></li>";
                         }
                         else echo "<li class=\"dropdown\">"
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
-                                            ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
-                                            ."<li><a href=\"#\">Edit</a></li>"
-                                            ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
+                                            ."<li><a href=\"../My_Account/shwple.php\">Show Profile</a></li>"
+                                            ."<li><a href=\"../My_Account/edit.php\">Edit</a></li>"
+                                            ."<li><a href=\"../My_Account/bkinghtry.php\">Booking History</a></li>"
+                                            ."<li><a href=\"../My_Account/logout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
                     ?>
