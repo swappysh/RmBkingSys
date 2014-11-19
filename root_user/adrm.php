@@ -58,7 +58,11 @@ if(isset($_POST['submit'])) {
                         else echo "<li class=\"dropdown\">"
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
+<<<<<<< HEAD
                                             ."<li class = \"active\"><a href=\"#\">Add Room</a></li>"
+=======
+                                            ."<li><a href=\"adrm.php\">Add Room</a></li>"
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                                             ."<li><a href=\"delrm.php\">Delete Room</a></li>"
                                             ."<li><a href=\"rmresvion.php\">Cancel Reservation</a></li>"
                                             ."<li><a href = \"rmuser.php\">Remove User</a></li>"

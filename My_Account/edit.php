@@ -31,7 +31,11 @@
             </div>
             <div>
                 <ul class = "nav navbar-nav">
+<<<<<<< HEAD
                     <li><a href = "../index.php">Home</a></li>
+=======
+                    <li><a href = "#">Home</a></li>
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                     <li><a href = "../reservation_form1.php">Reservation</a></li>
                     <li><a href = "../brwsrm.php">Room Availability</a></li>
                     <li><a href = "../upmingents.php">Upcoming Events</a></li>
@@ -66,7 +70,11 @@
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"shwple.php\">Show Profile</a></li>"
+<<<<<<< HEAD
                                             ."<li class = \"active\"><a href=\"#\">Edit</a></li>"
+=======
+                                            ."<li><a href=\"edit.php\">Edit</a></li>"
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                                             ."<li><a href=\"bkinghtry.php\">Booking History</a></li>"
                                             ."<li><a href=\"logout.php\">Log Out</a></li>"
                                         ."</ul>"

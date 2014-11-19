@@ -59,12 +59,12 @@ if ( isset($_POST['submit']) ) {
                         <li><a href = "reservation_form1.php">Reservation</a></li>
                         <li><a href = "brwsrm.php">Room Availability</a></li>
                         <li><a href = "upmingents.php">Upcoming Events</a></li>
-                        <li><a href = "contact.php">Contact</a></li>
-                        <li><a href = "faq.php">FAQ</a></li>
-                        <li><a href = "about.php">About Us</a></li>
+                        <li><a href = "index.php#cntctus">Contact</a></li>
+                        <li><a href = "index.php#faq">FAQ</a></li>
+                        <li><a href = "index.php#about">About Us</a></li>
                     </ul>
                     <ul class = "nav navbar-nav navbar-right">
-                    <?php
+                        <?php
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li>"
                                 ."<a href = \"root_user/rtloginform.php\">Admin Login</a></li>";
@@ -73,14 +73,15 @@ if ( isset($_POST['submit']) ) {
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"root_user/adrm.php\">Add Room</a></li>"
-                                            ."<li><a href=\"#\">Delete Room</a></li>"
-                                            ."<li><a href=\"#\">Cancel Reservation</a></li>"
-                                            ."<li><a href = \"#\">Remove User</a></li>"
+                                            ."<li><a href=\"root_user/delrm.php\">Delete Room</a></li>"
+                                            ."<li><a href=\"root_user/rmresvion.php\">Cancel Reservation</a></li>"
+                                            ."<li><a href = \"root_user/rmuser.php\">Remove User</a></li>"
                                             ."<li><a href=\"root_user/rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
                     ?>
 
+<<<<<<< HEAD
                         <?php
                             if (!isset( $_COOKIE['user'] )) {
                                 echo "<li class = \"active\">"
@@ -95,6 +96,23 @@ if ( isset($_POST['submit']) ) {
                                             ."</ul>"
                                         ."</li>";
                         ?>
+=======
+                    <?php
+                        if (!isset( $_COOKIE['user'] )) {
+                            echo "<li class = \"active\">"
+                                ."<a href = \"loginform.php\">Login</a></li>";
+                        }
+                        else echo "<li class=\"dropdown\">"
+                                    ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
+                                    ."<ul class=\"dropdown-menu\">"
+                                            ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
+                                            ."<li><a href=\"My_Account/edit.php\">Edit</a></li>"
+                                            ."<li><a href=\"My_Account/bkinghtry.php\">Booking History</a></li>"
+                                            ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
+                                        ."</ul>"
+                                    ."</li>";
+                    ?>
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                     </ul>
                 </div>
             </div>

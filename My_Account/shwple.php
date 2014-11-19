@@ -60,7 +60,11 @@
                         else echo "<li class=\"dropdown\">"
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
+<<<<<<< HEAD
                                             ."<li class = \"active\"><a href=\"#\">Show Profile</a></li>"
+=======
+                                            ."<li><a href=\"shwple.php\">Show Profile</a></li>"
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                                             ."<li><a href=\"edit.php\">Edit</a></li>"
                                             ."<li><a href=\"bkinghtry.php\">Booking History</a></li>"
                                             ."<li><a href=\"logout.php\">Log Out</a></li>"

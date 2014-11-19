@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
     </head>
 
     <body>
+<<<<<<< HEAD
     <!--Navigation Bar-->
     <nav class = "navbar navbar-default">
         <div class = "container-fluid">
@@ -42,6 +43,26 @@ if (isset($_POST['login'])) {
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <?php
+=======
+        <!--Navigation Bar-->
+        <nav class = "navbar navbar-default">
+            <div class = "container-fluid">
+                <div class = "navbar-header">
+                    <a class = "navbar-brand" href="../index.php">RmBkingSys</a>
+                </div>
+                <div>
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "../index.php">Home</a></li>
+                        <li><a href = "../reservation_form1.php">Reservation</a></li>
+                        <li><a href = "../brwsrm.php">Room Availability</a></li>
+                        <li><a href = "../upmingents.php">Upcoming Events</a></li>
+                        <li><a href = "../contact.php">Contact</a></li>
+                        <li><a href = "../faq.php">FAQ</a></li>
+                        <li><a href = "../about.php">About Us</a></li>
+                    </ul>
+                    <ul class = "nav navbar-nav navbar-right">
+                        <?php
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li class = \"active\">"
                                 ."<a href = \"#\">Admin Login</a></li>";
@@ -73,7 +94,12 @@ if (isset($_POST['login'])) {
                                         ."</ul>"
                                     ."</li>";
                     ?>
+<<<<<<< HEAD
                 </ul>
+=======
+                    </ul>
+                </div>
+>>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
             </div>
         </div>
     </nav>
