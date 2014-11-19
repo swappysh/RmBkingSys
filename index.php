@@ -53,9 +53,9 @@
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"root_user/adrm.php\">Add Room</a></li>"
-                                            ."<li><a href=\"#\">Delete Room</a></li>"
+                                            ."<li><a href=\"root_user/delrm.php\">Delete Room</a></li>"
                                             ."<li><a href=\"#\">Cancel Reservation</a></li>"
-                                            ."<li><a href = \"#\">Remove User</a></li>"
+                                            ."<li><a href = \"root_user/rmuser.php\">Remove User</a></li>"
                                             ."<li><a href=\"root_user/rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
