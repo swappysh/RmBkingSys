@@ -9,26 +9,30 @@ if ( isset($_COOKIE['user']) ) {
 
 if ( isset($_POST['submit']) ) {
 
-    require_once("cnntdb.php");
-    require_once("url.php");
+	if ( ($_POST['password'] == $_POST['confirm_password']) && ($_POST['email'] == $_POST['confirm_email']) ) {
 
-    connect();
+	    require_once("cnntdb.php");
+	    require_once("url.php");
 
-    $user_name =$_POST['user_name'];
-    $f_name =$_POST['f_name'];
-    $l_name =$_POST['l_name'];
-    $org =$_POST['org'];
-    $email =$_POST['email'];
-    $mob_num =$_POST['mob_num'];
-    $password =$_POST['password'];
+	    connect();
 
-    $sql = "INSERT INTO User VALUES ('$user_name', '$f_name', '$l_name', '$org', '$email', $mob_num, '$password')";
+	    $user_name =$_POST['user_name'];
+	    $f_name =$_POST['f_name'];
+	    $l_name =$_POST['l_name'];
+	    $org =$_POST['org'];
+	    $email =$_POST['email'];
+	    $mob_num =$_POST['mob_num'];
+	    $password =$_POST['password'];
+
+	    $sql = "INSERT INTO User VALUES ('$user_name', '$f_name', '$l_name', '$org', '$email', $mob_num, '$password')";
     
-    if (mysqli_query($conn, $sql)) {
-        header("Location: $rootURL/index.php");
-    } else {
-            $check = 0;
-        }
+	    if (mysqli_query($conn, $sql)) {
+	 	   header("Location: $rootURL/index.php");
+	    } else {
+	            $check = 0;
+	        }
+    }
+    else $check = 2;
 }
 ?>
 
@@ -80,7 +84,7 @@ if ( isset($_POST['submit']) ) {
                         <?php
                             if (!isset( $_COOKIE['user'] )) {
                                 echo "<li class = \"active\">"
-                                    ."<a href = \"loginform.php\">Login</a></li>";
+                                    ."<a href = \"#\">Login</a></li>";
                             }
                             else echo "<li class=\"dropdown\">"
                                         ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
@@ -136,7 +140,10 @@ if ( isset($_POST['submit']) ) {
         </div>
         <?php
         if (!$check) {
-            echo "<div class=\"alert alert-danger\" role=\"alert\">Error: <br>".mysqli_error($conn)."</div>";
+            echo "<div class = \"container\"><div class=\"alert alert-danger\" role=\"alert\">Error: <br>".mysqli_error($conn)."</div></div>";
+        }
+        elseif ($check == 2) {
+            echo "<div class = \"container\"><div class=\"alert alert-danger\" role=\"alert\">Doesn't Match</div></div>";
         }
         ?>
     </body>
