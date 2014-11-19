@@ -29,7 +29,7 @@
         <nav class = "navbar navbar-default">
             <div class = "container-fluid">
                 <div class = "navbar-header">
-                    <a class = "navbar-brand" href="index.php">RmBkingSys</a>
+                    <a class = "navbar-brand" href="../index.php">RmBkingSys</a>
                 </div>
                 <div>
                     <ul class = "nav navbar-nav">
@@ -51,7 +51,7 @@
                                     ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Admin <span class=\"caret\"></span></a>"
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"adrm.php\">Add Room</a></li>"
-                                            ."<li><a href=\"delrm.php\">Delete Room</a></li>"
+                                            ."<li class = \"active\"><a href=\"#\">Delete Room</a></li>"
                                             ."<li><a href=\"rmresvion.php\">Cancel Reservation</a></li>"
                                             ."<li><a href = \"rmuser.php\">Remove User</a></li>"
                                             ."<li><a href=\"rtlogout.php\">Log Out</a></li>"
@@ -74,6 +74,7 @@
                                         ."</ul>"
                                     ."</li>";
                     ?>
+                </ul>
             </div>
         </div>
     </nav>

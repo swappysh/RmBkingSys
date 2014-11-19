@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
                                         ."</ul>"
                                     ."</li>";
                     ?>
-
+                </ul>
             </div>
         </div>
     </nav>
