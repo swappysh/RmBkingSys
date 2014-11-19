@@ -37,26 +37,6 @@
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <?php
-=======
-        <!--Navigation Bar-->
-        <nav class = "navbar navbar-default">
-            <div class = "container-fluid">
-                <div class = "navbar-header">
-                    <a class = "navbar-brand" href="index.php">RmBkingSys</a>
-                </div>
-                <div>
-                    <ul class = "nav navbar-nav">
-                        <li><a href = "../index.php">Home</a></li>
-                        <li><a href = "../reservation_form1.php">Reservation</a></li>
-                        <li class = "active"><a href = "#">Room Availability</a></li>
-                        <li><a href = "../upmingents.php">Upcoming Events</a></li>
-                        <li><a href = "../index.php#cntctus">Contact</a></li>
-                        <li><a href = "../index.php#faq">FAQ</a></li>
-                        <li><a href = "../index.php#about">About Us</a></li>
-                    </ul>
-                    <ul class = "nav navbar-nav navbar-right">
-                        <?php
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li>"
                                 ."<a href = \"../root_user/rtloginform.php\">Admin Login</a></li>";
@@ -83,21 +63,12 @@
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"shwple.php\">Show Profile</a></li>"
                                             ."<li><a href=\"edit.php\">Edit</a></li>"
-<<<<<<< HEAD
                                             ."<li class = \"active\"><a href=\"#\">Booking History</a></li>"
-=======
-                                            ."<li><a href=\"bkinghtry.php\">Booking History</a></li>"
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                                             ."<li><a href=\"logout.php\">Log Out</a></li>"
                                         ."</ul>"
                                     ."</li>";
                     ?>
-<<<<<<< HEAD
                 </ul>
-=======
-                    </ul>
-                </div>
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
             </div>
         </div>
     </nav>

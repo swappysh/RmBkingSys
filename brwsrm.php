@@ -20,7 +20,6 @@
     </head>
 
     <body>
-<<<<<<< HEAD
     <!--Navigation Bar-->
     <nav class = "navbar navbar-default">
         <div class = "container-fluid">
@@ -38,25 +37,6 @@
                     <li><a href = "index.php#about">About Us</a></li>
                 </ul>
                 <ul class = "nav navbar-nav navbar-right">
-=======
-        <!--Navigation Bar-->
-        <nav class = "navbar navbar-default">
-            <div class = "container-fluid">
-                <div class = "navbar-header">
-                    <a class = "navbar-brand" href="index.php">RmBkingSys</a>
-                </div>
-                <div>
-                    <ul class = "nav navbar-nav">
-                        <li><a href = "index.php">Home</a></li>
-                        <li><a href = "reservation_form1.php">Reservation</a></li>
-                        <li class = "active"><a href = "#">Room Availability</a></li>
-                        <li><a href = "upmingents.php">Upcoming Events</a></li>
-                        <li><a href = "index.php#cntctus">Contact</a></li>
-                        <li><a href = "index.php#faq">FAQ</a></li>
-                        <li><a href = "index.php#about">About Us</a></li>
-                    </ul>
-                    <ul class = "nav navbar-nav navbar-right">
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                     <?php
                         if (!isset( $_COOKIE['root_user'] )) {
                             echo "<li>"
@@ -89,12 +69,8 @@
                                         ."</ul>"
                                     ."</li>";
                     ?>
-<<<<<<< HEAD
-                </ul>
-=======
                     </ul>
                 </div>
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
             </div>
         </div>
     </nav>

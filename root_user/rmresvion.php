@@ -29,11 +29,7 @@ $result = $conn->query($sql);
             <div>
                 <ul class = "nav navbar-nav">
                     <li><a href = "../index.php">Home</a></li>
-<<<<<<< HEAD
                     <li><a href = "../reservation_form1.php">Reservation</a></li>
-=======
-                    <li class = "active"><a href = "#">Reservation</a></li>
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                     <li><a href = "../brwsrm.php">Room Availability</a></li>
                     <li><a href = "../upmingents.php">Upcoming Events</a></li>
                     <li><a href = "../index.php#cntctus">Contact</a></li>
@@ -51,11 +47,7 @@ $result = $conn->query($sql);
                                     ."<ul class=\"dropdown-menu\">"
                                             ."<li><a href=\"adrm.php\">Add Room</a></li>"
                                             ."<li><a href=\"delrm.php\">Delete Room</a></li>"
-<<<<<<< HEAD
                                             ."<li class = \"active\"><a href=\"#\">Cancel Reservation</a></li>"
-=======
-                                            ."<li><a href=\"rmresvion.php\">Cancel Reservation</a></li>"
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                                             ."<li><a href = \"rmuser.php\">Remove User</a></li>"
                                             ."<li><a href=\"rtlogout.php\">Log Out</a></li>"
                                         ."</ul>"
