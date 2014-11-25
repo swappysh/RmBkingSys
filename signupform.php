@@ -22,7 +22,9 @@ if ( isset($_POST['submit']) ) {
 	    $org =$_POST['org'];
 	    $email =$_POST['email'];
 	    $mob_num =$_POST['mob_num'];
-	    $password =$_POST['password'];
+
+	    # Password encryption for security
+	    $password = md5($_POST['password']);
 
 	    $sql = "INSERT INTO User VALUES ('$user_name', '$f_name', '$l_name', '$org', '$email', $mob_num, '$password')";
     
@@ -81,7 +83,6 @@ if ( isset($_POST['submit']) ) {
                                     ."</li>";
                     ?>
 
-<<<<<<< HEAD
                         <?php
                             if (!isset( $_COOKIE['user'] )) {
                                 echo "<li class = \"active\">"
@@ -96,23 +97,6 @@ if ( isset($_POST['submit']) ) {
                                             ."</ul>"
                                         ."</li>";
                         ?>
-=======
-                    <?php
-                        if (!isset( $_COOKIE['user'] )) {
-                            echo "<li class = \"active\">"
-                                ."<a href = \"loginform.php\">Login</a></li>";
-                        }
-                        else echo "<li class=\"dropdown\">"
-                                    ."<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">My Account <span class=\"caret\"></span></a>"
-                                    ."<ul class=\"dropdown-menu\">"
-                                            ."<li><a href=\"My_Account/shwple.php\">Show Profile</a></li>"
-                                            ."<li><a href=\"My_Account/edit.php\">Edit</a></li>"
-                                            ."<li><a href=\"My_Account/bkinghtry.php\">Booking History</a></li>"
-                                            ."<li><a href=\"My_Account/logout.php\">Log Out</a></li>"
-                                        ."</ul>"
-                                    ."</li>";
-                    ?>
->>>>>>> b58ecbd5ac3bdbe8a5e6c27eeb56362582d29223
                     </ul>
                 </div>
             </div>

@@ -11,11 +11,11 @@
 			
 			connect();
 
-			$sql = "SELECT Uname FROM User Where Password = '".$_POST['opassword']."'";
+			$sql = "SELECT Uname FROM User Where Password = '".md5($_POST['opassword'])."'";
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) {
-				$sql = "UPDATE User SET Password = '".$_POST['npassword']."' WHERE Uname = '".$_COOKIE['user']."'";
+				$sql = "UPDATE User SET Password = '".md5($_POST['npassword'])."' WHERE Uname = '".$_COOKIE['user']."'";
                 $conn->query($sql);
                 header("Location: $rootURL/index.php");
 			}
