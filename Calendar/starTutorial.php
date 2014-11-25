@@ -6,7 +6,6 @@ class Calendar {
      */
     public function __construct(){     
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
-        $this->db = new mysqli('localhost','root','getready4','MiniProject') OR die(mysqli_connect_error());
     }
      
     /********************* PROPERTY ********************/  
@@ -23,34 +22,9 @@ class Calendar {
     private $daysInMonth=0;
      
     private $naviHref= null;
-
-    private $conn;
      
     /********************* PUBLIC **********************/  
-    /**
-    * check whether any event on that day or not
-    */
-    private function _checkEvent($day = null, $month = null, $year = null){
         
-        $result = $this->db->query("SELECT * FROM mycalendar");
-        while($row = $result->fetch_assoc())
-        {
-            if($day == date('d', strtotime($row["from_date"]))&&$month == date('m', strtotime($row["from_date"]))&&$year == date('Y', strtotime($row["from_date"])))
-                {
-                    $this->inEvent++;
-                    return TRUE;
-                }
-            if($day == date('d', strtotime($row["to_date"]))&&$month == date('m', strtotime($row["to_date"]))&&$year == date('Y', strtotime($row["to_date"])))
-                {
-                    $this->inEvent--;
-                    return TRUE;
-                }
-        }
-        if($this->inEvent)
-            return TRUE;
-        return FALSE;
-    }
-
     /**
     * print out the calendar
     */
@@ -115,33 +89,10 @@ class Calendar {
     }
      
     /********************* PRIVATE **********************/ 
-
-
-    private function connect()
-    {
-        global $conn;
-        $servername = "localhost";
-        $username = "root";
-        $password = "getready4";
-        $dbname = "MiniProject";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_errno) {
-            die("<div class=\"alert alert-danger\" role=\"alert\">Connection failed: ".$conn->connect_error()."</div>");
-        }
-    }
-
     /**
     * create the li element for ul
     */
     private function _showDay($cellNumber){
-
-        global $conn;
-
-    	$this->connect();
-
-        $sql = "SELECT fdate, tdate FROM BkingDetail WHERE Status = 'active'";
          
         if($this->currentDay==0){
              
@@ -168,20 +119,14 @@ class Calendar {
  
             $cellContent=null;
         }
-
-        $stat = "";
-
-        if ($result = $conn->query($sql)) {
-            while ($row = $result->fetch_assoc()) {
-                if ( $this->currentDate >= date('Y-m-d',strtotime("\"".$row['fdate']."\"")) && $this->currentDate <= date('Y-m-d',strtotime("\"".$row['tdate']."\"")) ) {
-                    $stat = " style = \"background-color: blue\"";
-                    break;
-                }
-            }
-        }
-
+        
+        # Variable to store current day to use in day link
+        $currentday = $this->currentDay - 1;     
+         
         return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').'"'.$stat.'>'.$cellContent.'</li>';
+                ($cellContent==null?'mask':'').'">'.( ( !is_null($this->currentDate) )?'<a href = "Calendar/evdtls.php?year='.$this->currentYear.
+                '&month='.$this->currentMonth.'&day='.$currentday.'" style = "text-decoration:none;" target="_blank">':'' ).
+                $cellContent.( ( !is_null($this->currentDate) )?'</a>':'' ).'</li>';
     }
      
     /**
