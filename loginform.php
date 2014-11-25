@@ -15,7 +15,7 @@ if ( isset($_POST['login']) ) {
     connect();
 
     $user_name = $_POST['user_name'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $sql = "SELECT * FROM User WHERE Uname = '$user_name' AND Password = '$password'";
     $result = $conn->query($sql);
